@@ -4,12 +4,13 @@ type ArticleCardProps = {
   articlePromise: Promise<IArticle>;
 };
 
-export async function ArticleCard() {
-  const article: any = null;
+export async function ArticleCard({ articlePromise }: ArticleCardProps) {
+  const article = await articlePromise;
 
   return (
     <article className={"Container"}>
-      <p>todo article.title und article.body anzeigen</p>
+      <h2>{article.title}</h2>
+      <p>{article.body}</p>
     </article>
   );
 }

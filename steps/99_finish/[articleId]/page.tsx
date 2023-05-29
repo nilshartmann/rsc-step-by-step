@@ -1,14 +1,8 @@
-import {
-  addComment,
-  fetchArticleSlow,
-  fetchCommentsSlow,
-} from "@/app/articles";
+import { fetchArticleSlow, fetchCommentsSlow } from "@/app/articles";
 import { Suspense } from "react";
 import LoadingIndicator from "@/app/components/LoadingIndicator";
 import { ArticleCard } from "@/app/components/ArticleCard";
 import { CommentsList } from "@/app/components/CommentsList";
-import { revalidatePath } from "next/cache";
-import AddCommentButton from "@/app/components/AddCommentButton";
 
 type ArticlePageProps = {
   params: { articleId: string };
