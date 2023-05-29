@@ -12,10 +12,16 @@ export default function ThemeSwitcher({ children }: ThemeSwitcherProps) {
   return (
     <div className={dark ? "Dark" : "Light"}>
       {children}
-      <label className="Checkbox">
-        <input type="checkbox" checked={dark} onChange={() => setDark(!dark)} />
-        Dark Mode
-      </label>
+      <div className="ThemeSwitcher">
+        <label className="Checkbox">
+          <input
+            type="checkbox"
+            checked={dark}
+            onChange={() => setDark(!dark)}
+          />
+          Dark Mode
+        </label>
+      </div>
     </div>
   );
 }

@@ -67,12 +67,51 @@ textarea {
   width: 100%;
 }
 
-
-
 input[type="checkbox"],
 .Checkbox {
   background-color: var(--grey-1);
 }
+
+input[type="checkbox"] {
+  width: 1.15em;
+  height: 1.15em;
+  margin-right: 5px;
+}
+
+/*input[type="checkbox"] {*/
+/*  appearance: none;*/
+/*  background-color: #fff;*/
+/*  margin: 0 5px 0 0;*/
+/*  font: inherit;*/
+/*  color: currentColor;*/
+/*  width: 1.15em;*/
+/*  height: 1.15em;*/
+/*  border: 0.15em solid currentColor;*/
+/*  border-radius: 0.15em;*/
+/*  transform: translateY(-0.075em);*/
+/*}*/
+
+
+/*input[type="checkbox"]:checked {*/
+/*  background-color: green;*/
+/*}*/
+
+/*input[type="checkbox"]:hover {*/
+/*  background-color: var(--grey-3);*/
+/*}*/
+
+
+.ThemeSwitcher {
+  background-color: var(--grey-1);
+  padding: 1rem;
+}
+
+form {
+  border: 2px solid gray;
+  border-radius: 10px;
+  padding: 0.5rem;
+}
+
 
 input,
 textarea {
@@ -143,7 +182,9 @@ button:hover:disabled {
   margin-right: 0;
 }
 
+.Dark .ThemeSwitcher,
 .Dark .Container,
+.Dark label,
 .Dark {
   background-color: darkgray;
 }
@@ -185,6 +226,7 @@ label {
 .Date {
   margin: 0 0 0 0;
 }
+
 
 .Container {
   background-color: var(--grey-1);

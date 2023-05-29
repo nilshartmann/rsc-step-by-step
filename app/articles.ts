@@ -1,9 +1,16 @@
-export type IArticle = {
+type RawArticle = {
   id: string;
   title: string;
   body: string;
 };
-const articles: IArticle[] = [
+
+export type IArticle = {
+  id: string;
+  title: string;
+  body: string;
+  latestComment?: string;
+};
+const articles: RawArticle[] = [
   { id: "A1", title: "First article", body: "Body of first article" },
   { id: "A2", title: "Second article", body: "Body of second article" },
   { id: "A3", title: "Third article", body: "Body of third article" },
@@ -32,8 +39,17 @@ const comments: Record<string, IComment[]> = {
   ],
 };
 
+function toArticle(raw: RawArticle): IArticle {
+  return {
+    ...raw,
+    latestComment: comments[raw.id][0].comment,
+  };
+}
+
+let nextCommentId = 100;
+
 export async function fetchArticles() {
-  return articles;
+  return articles.map(toArticle);
 }
 
 export async function fetchArticleSlow(articleId: string): Promise<IArticle> {
@@ -43,7 +59,7 @@ export async function fetchArticleSlow(articleId: string): Promise<IArticle> {
       if (article.length !== 1) {
         throw new Error("Invalid articleId " + articleId);
       }
-      res(article[0]);
+      res(toArticle(article[0]));
     }, 2000)
   );
 }
@@ -55,5 +71,21 @@ export async function fetchCommentsSlow(
     setTimeout(() => {
       res(comments[articleId] || []);
     }, 3000)
+  );
+}
+
+export async function addComment(articleId: string, newComment: string) {
+  return new Promise((res) =>
+    setTimeout(() => {
+      const existingComments = comments[articleId] || [];
+      comments[articleId] = [
+        {
+          id: `C${++nextCommentId}`,
+          comment: newComment,
+        },
+        ...existingComments,
+      ];
+      res("");
+    }, 1500)
   );
 }
