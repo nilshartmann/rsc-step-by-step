@@ -23,8 +23,16 @@
 
 - eine RSC für einen einzelnen Artikel
   - Routing ist Next.js-spezifisch!
-  
+- Suspense für Loading Indikatoren
+- Promises übergeben als "Pattern"
 
+## 4. Server Actions / Form Actions
+
+- Server Actions für Mutations
+  - achtung: in React noch experimentell, in Next.js "alpha"
+
+## 4.5 Form Status
+- achtung: in React noch experimentell, in Next.js "alpha"
 
 # Erweiterungen
 

@@ -1,5 +1,3 @@
-import AddCommentButton from "@/app/components/AddCommentButton";
-
 // Schritt 1: "nur" Speichern (form-action und Submit Button)
 // Schritt 2: AddCommentButton
 
@@ -8,7 +6,7 @@ export function AddCommentForm({ articleId }: { articleId: string }) {
     <form>
       <label>
         New Comment
-        <input type="text" name="comment" />
+        <input type="text" />
       </label>
     </form>
   );
