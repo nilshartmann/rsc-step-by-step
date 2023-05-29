@@ -23,7 +23,7 @@ export default async function RootPage() {
       {articles.map((a) => {
         return (
           <ThemeSwitcher key={a.id}>
-            <article key={a.id} className="Container">
+            <article className="Container">
               <h2>{a.title}</h2>
               <p>{a.body}</p>
             </article>

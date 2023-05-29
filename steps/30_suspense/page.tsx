@@ -24,7 +24,7 @@ export default async function RootPage() {
       {articles.map((a) => {
         return (
           <ThemeSwitcher key={a.id}>
-            <article key={a.id} className="Container">
+            <article className="Container">
               <AppLink href={`/${a.id}`}>
                 <h2>{a.title}</h2>
               </AppLink>

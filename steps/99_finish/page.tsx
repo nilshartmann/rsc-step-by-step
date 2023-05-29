@@ -1,16 +1,29 @@
+// Schritt 1:
+//   - Artikel lesen und anzeigen (mit latestComment)
+//
+// Schritt 2:
+//  - ThemeSwitcher
+//  - Wie kommunizieren wir vom ThemeSwitcher zurück
+//    zur Parent RSC-Komponente? 🤔
+//
+// Schritt 3:
+//  - AppLink
+//
+// Schritt 4:
+//  - AddCommentForm
+
 import { fetchArticles } from "@/app/articles";
-import AppLink from "@/app/components/AppLink";
 import ThemeSwitcher from "@/app/components/ThemeSwitcher";
+import AppLink from "@/app/components/AppLink";
 import { AddCommentForm } from "@/app/components/AddCommentForm";
 
 export default async function RootPage() {
   const articles = await fetchArticles();
-
   return (
     <>
       <h1>Articles</h1>
-      <div>
-        {articles.map((a) => (
+      {articles.map((a) => {
+        return (
           <ThemeSwitcher key={a.id}>
             <article className="Container">
               <AppLink href={`/${a.id}`}>
@@ -18,14 +31,14 @@ export default async function RootPage() {
               </AppLink>
               <p>{a.body}</p>
               <p>
-                <b>Latest comment</b>
+                <b>Latest Comment</b>
               </p>
               <p>{a.latestComment}</p>
               <AddCommentForm articleId={a.id} />
             </article>
           </ThemeSwitcher>
-        ))}
-      </div>
+        );
+      })}
     </>
   );
 }
