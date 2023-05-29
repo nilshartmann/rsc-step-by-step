@@ -19,6 +19,13 @@
   - Eine Client-Komponente kann selbst keine RSC  rendern
   - was müssen wir tun, wenn die Client-Komponente zurüc zur RSC kommunizieren will (statt gewohntem Callback) 
 
+## 3. Article-Page
+
+- eine RSC für einen einzelnen Artikel
+  - Routing ist Next.js-spezifisch!
+  
+
+
 # Erweiterungen
 
 - `marked` o.ä. als Beispiel für externel Lib

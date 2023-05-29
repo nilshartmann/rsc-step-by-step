@@ -4,7 +4,7 @@ type ArticleCardProps = {
   articlePromise: Promise<IArticle>;
 };
 
-export async function ArticleCard() {
+export function ArticleCard() {
   const article: any = null;
 
   return (

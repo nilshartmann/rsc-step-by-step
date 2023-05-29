@@ -4,8 +4,8 @@ type CommentsListProps = {
   commentsPromise: Promise<IComment[]>;
 };
 
-export async function CommentsList() {
-  const comments: IComment[] = [];
+export async function CommentsList({ commentsPromise }: CommentsListProps) {
+  const comments = await commentsPromise;
 
   return (
     <div className="Container">
