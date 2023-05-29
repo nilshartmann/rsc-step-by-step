@@ -3,6 +3,8 @@
 //
 // Schritt 2:
 //  - ThemeSwitcher
+//  - Wie kommunizieren wir vom ThemeSwitcher zurück
+//    zur Parent RSC-Komponente? 🤔
 //
 // Schritt 3:
 //  - AppLink
