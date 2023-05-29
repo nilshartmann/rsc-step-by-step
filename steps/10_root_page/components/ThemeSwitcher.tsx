@@ -1,11 +1,15 @@
 import { useState } from "react";
 
-export default function ThemeSwitcher() {
+type ThemeSwitcherProps = {
+  children: React.ReactNode
+}
+
+export default function ThemeSwitcher({children}: ThemeSwitcherProps) {
   const [dark, setDark] = useState(false);
 
   return (
     <div className={dark ? "Dark" : "Light"}>
-      <p>todo: children rendern</p>
+      {children}
       <div className="ThemeSwitcher">
         <label className="Checkbox">
           <input
