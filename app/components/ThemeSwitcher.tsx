@@ -1,12 +1,10 @@
-"use client";
-
 import { useState } from "react";
 
 type ThemeSwitcherProps = {
-  children: React.ReactNode;
-};
+  children: React.ReactNode
+}
 
-export default function ThemeSwitcher({ children }: ThemeSwitcherProps) {
+export default function ThemeSwitcher({children}: ThemeSwitcherProps) {
   const [dark, setDark] = useState(false);
 
   return (

@@ -86,6 +86,6 @@ export async function addComment(articleId: string, newComment: string) {
         ...existingComments,
       ];
       res("");
-    }, 1200)
+    }, 1)
   );
 }
