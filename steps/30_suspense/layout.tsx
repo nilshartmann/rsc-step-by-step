@@ -19,6 +19,7 @@ export default function RootLayout({
       <body>
         <div className={"Root"}>
           <div className={"PageHeader"}>
+            <h1>Next.JS Blog Example</h1>
             <AppLink className="Button" href="/">
               Home
             </AppLink>
